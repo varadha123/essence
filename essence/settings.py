@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'essence.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -89,6 +89,11 @@ DATABASES = {
     }
 }
 
+'''
+import dj_database_url
+DATABASE = {
+    'default':dj_database_url.parse('postgres://essencedb_user:EPEcaw6jO1Op0e8CzA1v3XX9Za26NWzz@dpg-cnt8qa021fec73f8trpg-a.oregon-postgres.render.com/essencedb')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
