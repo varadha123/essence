@@ -77,21 +77,22 @@ WSGI_APPLICATION = 'essence.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'essencedb', 
-        'USER':'postgres',
-        'PASSWORD':'12345',
-        'HOST': '127.0.0.1',
-        'PORT': '5432'
-    }
-}
+# '''
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':'essencedb', 
+#         'USER':'postgres',
+#         'PASSWORD':'12345',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432'
+#     }
+# }
 
-'''
+# '''
 import dj_database_url
-DATABASE = {
+DATABASES = {
+
     'default':dj_database_url.parse('postgres://essencedb_user:EPEcaw6jO1Op0e8CzA1v3XX9Za26NWzz@dpg-cnt8qa021fec73f8trpg-a.oregon-postgres.render.com/essencedb')
 }
 
