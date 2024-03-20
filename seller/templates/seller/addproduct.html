@@ -1,0 +1,53 @@
+{% extends 'seller/seller_home.html' %}
+{% block content %}
+<br><br><br>
+<div class="container-fluid" style="background-color: rgb(222, 195, 222);">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <h4>Add Products</h4><br>
+            
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="" name="pdt_name">
+            </div>
+             
+            <div class="mb-3"> 
+                <label for="" class="form-label">Description</label>
+                <input type="text" class="form-control" id=""  name="description">
+            </div>
+
+            <div class="mb-3"> 
+                <label for="" class="form-label">Price</label>
+                <input type="text" class="form-control" id="" name="price">
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Image</label>
+                <input type="file" class="form-control" id="" name="image">
+            </div>
+
+
+
+
+            <div class="mb-3">
+                <label for="" class="form-label">Category</label>
+                <select class="form-select" aria-label=""  name="category">
+                    {% for category in categories %}
+                    <option value="{{category.id}}">{{category.name}}</option>
+                    {% endfor %}
+                  </select>
+            </div><br> 
+        
+            <button type="submit" style=" background-color: lightcoral; border: lightcoral; width:725px; height: 40px;  ; color:white;">ADD PRODUCT</button>
+            
+          </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+<br><br><br><br><br><br><br><br><br>
+</div>
+{% endblock %}

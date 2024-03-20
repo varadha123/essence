@@ -1,0 +1,250 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Essence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <style>
+    
+    
+
+
+  </style>
+</head>
+  <body>
+<div class="container-fluid">
+    <div class="row" >
+      <div class="col-12" >
+        <nav   class="navbar  navbar-light bg-white fixed-top " >
+        <div class="container-fluid">
+          <img  style="height: 50px; width: 150px; " src="{% static 'images/logo12.jpg'%}" alt="" >
+          
+          <form class="d-flex mt-3" role="search" style=" margin-left: 700px;" action="{% url 'customer:search'%}" method="get">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
+            <button class="btn btn-dark" type="submit">Search</button>
+          </form>
+          
+
+          
+          <!-- <a href=""><img  style="height: 40px; width: 40px;" src="{% static 'images/search_icon.jpg'%}" alt=""  ></a> -->
+          <a  href="{% url 'customer:login' %}"><img  style="height: 40px; width: 40px;  " src="{% static 'images/user_icon.jpg'%}" alt="" ></a>
+          <a href="{% url 'customer:cart' %}"><img  style="height: 40px; width: 40px;" src="{% static 'images/cartimg.jpg'%}" alt=""  ></a>
+          <a href="{% url 'customer:logout' %}" class="btn btn-dark" >Logout</a>
+
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Essence</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'customer:home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'customer:signup' %}">Sign up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'seller:seller_home' %}">Seller </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Products
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Moisturizer</a></li>
+                    <li><a class="dropdown-item" href="#">Cleanser</a></li>
+                    <li><a class="dropdown-item" href="#">Serum</a></li>
+                    <li><a class="dropdown-item" href="#">Sunscreen</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">About Us </a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3" role="search"  action="{% url 'customer:search'%}" method="get">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav></div>
+    </div>
+{% block content %}
+<!-- CALOUSAL -->
+<br><br><br>
+<div class="row">
+    <div class="col-12"><div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img  style="height:450px ;" src="{% static 'images/Screenshot.jpg'%}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img  style="height: 450px;" src="{% static 'images/callousal_pink.jpg'%}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img style="height: 450px;"  src="{% static 'images/carousel_girls1.jpg'%}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div></div>
+</div>
+
+
+<!-- -->
+<br>
+<div class="container-fluid" >
+<div class="row" ><div class="col-12" style="background-color: lightpink;  color: #FFFFFF;  text-align: center;  font-weight: 1000;">IMMERSE YOURSELF IN FRUITS</div></div></div>
+
+
+<!-- CARDS -->
+
+<br>
+<div class="container-fluid">
+<div class="row" style= "text-align: center;">
+  <div class="col-3"  ><div class="card mx-auto" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/moist_card.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Moisturizer</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" style="background-color:lightcoral;border: lightcoral;">Go somewhere</a>
+  </div>
+ </div></div>
+
+
+  <div class="col-3" ><div class="card mx-auto" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/facewash_card1.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Cleanser</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" style="background-color:lightcoral;border: lightcoral;">Go somewhere</a>
+  </div>
+  </div></div>
+
+  <div class="col-3"><div class="card mx-auto" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/serum12.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Serum</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" style="background-color:lightcoral;border: lightcoral;">Go somewhere</a>
+  </div>
+  </div></div>
+
+  <div class="col-3"><div class="card mx-auto" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/sunscreen1.jpg' %}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Sunscreen</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary" style="background-color:lightcoral; border: lightcoral;">Go somewhere</a>
+  </div>
+  </div></div>
+
+
+</div>
+</div>
+
+<!-- -------------- -->
+
+<br>
+<div class="container-fluid" >
+<div class="row" ><div class="col-12" style="background-color: lightpink;  color: #FFFFFF;  text-align: center;  font-weight: 1000;">UNLOCK THE GOODNESS OF REAL FRUIT EXTRACTS</div></div></div>
+  
+
+<!-- -------------- -->
+
+
+<!-- About Us -->
+<br>
+<div class="container-fluid" style= "text-align: center;"><div class="row"><div class="col-6"><img   style="height: 500px; width: 600px;" src="{% static 'images/all2.jpg' %}" alt=""></div>
+<div class="col-6"><h2>About Us</h2><hr><br>
+<h4>Fruit Forward. Clinically Effective. Glowing Skin.</h4><br>
+<h6>Your go-to brand for sensorial skincare innovations that deliver clinical effective results for healthy and glowing skin. We create gentle and effective formulas for better skin.</h6><br>
+<h4>We are committed to sustainability.</h4><br>
+<h6>We're constantly working to reduce our environmental footprints, by going carbon neutral, using eco-concious pakaging and offering a send-back recycling program.</h6><br>
+<h4>We keep it real.</h4><br>
+<h6>We celebrate real, unretouched skin and pledge to never use words that encourage unrealistic skin goals like perfect, ageless, flawless.</h6>
+
+</div>
+</div></div><br>
+  
+<!-- -------------- -->
+
+  
+
+
+<br>
+<div class="container-fluid" >
+<div class="row" ><div class="col-12" style="background-color: lightpink;  color: #FFFFFF;  text-align: center;  font-weight: 1000;">GOOD SKIN ALL DAY</div></div></div>
+  
+<!-- -------------- -->
+
+<!-- VIDEO -->
+
+
+<br>
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-6" style= "text-align: right;"><video height="550px"  loop autoplay muted>
+      <source src="{% static 'video/video3.mp4'%}" type="video/mp4">
+    </video></div>
+    <div class="col-6" style= "text-align: left;"><img style="height:550px; width:350px;" src="{% static 'images/avacado_serum.jpg'%}" alt=""></div>
+  </div>
+</div>
+
+
+
+
+<!-- -------------- -->
+{% endblock %}
+
+
+
+
+
+<!-- BOTTTOM NAVBAR -->
+
+<div class="container-fluid" style="background-color: plum;"><br>
+  <div class="row" style="text-align: center;">
+
+    <div class="col-4" ><h5>About</h5><p>About Us</p></div> 
+    <div class="col-4"><h5>Support</h5><p>Contact Us</p></div>
+    <div class="col-4"><h5>Connect With Us</h5><img style="height: 50px;" src="{% static 'images/Instagram.webp' %}"  alt=""><img style="height: 50px;" src="{% static 'images/FB.webp' %}" alt=""><img style="height: 50px;" src="{% static 'images/Twitter.webp' %}" alt=""></div>
+
+</div></div>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+</div>
+<script src="{% static 'script/login.js' %}"></script>
+       
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

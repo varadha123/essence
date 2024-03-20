@@ -1,0 +1,57 @@
+{% extends 'customer/home.html' %}
+{% load static %}
+{% block content %}
+<br><br><br>
+<div class="row">
+    <div class="col-6"><div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="250" >
+            <img  style="height: 450px;" src="{% static 'images/WOMEN11.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="250" >
+            <img  style="height: 450px;" src="{% static 'images/WOMEN22.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="250" >
+            <img style="height: 450px;" src="{% static 'images/women33.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div></div>
+    <div class="col-6" style="background-color: plum;display: flex; justify-content: center; align-items: center; " ><h2 style="color:white ; ">Meet Our All New Fruit Babies</h2></div>
+</div>
+  
+<!-- -------------- -->
+
+
+<div class="row" >
+    {% for product in products %}
+     <div class="col-3 ">
+        <div class="card mx-auto mt-5 " style="width: 18rem;">
+        <img src="{{product.image.url}}" class="card-img-top  " alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{product.product_name}}</h5>
+              <h5 class="card-title">{{product.price}}</h5>
+              <form action="{% url 'customer:add_to_cart' product.id %}" method="post">
+                {% csrf_token %}
+                <div class="quantity" style="display: none;">
+                  <input type="number" name="quantity" id="quantity" value="1" min="1" required>
+                </div>
+                <button type="submit" style="background-color: lightcoral; color: white;">ADD TO CART</button>
+              </form>
+              
+              </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'seller/seller_home.html' %}
+{% load static %}
+{% block content %}
+
+<br><br>
+<div class="container-fluid" style="background-color: rgb(222, 195, 222); "  >
+<br><br><br><br><br><br>
+<div class="row">
+<div class="col-3"></div>
+<div class="col-3"><div class="card mx-auto" style="width: 18rem; text-align: center;">
+  <img src="{% static 'images/about6.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body" >
+
+    <h5 class="card-title">ADD PRODUCTS</h5>
+    <p class="card-text">Add products that are made with high quality ingredients and vegan certified.</p>
+    <a href="{% url 'seller:addproduct' %}" class="btn btn-primary" style="background-color: lightcoral; border-color: lightcoral;">ADD PRODUCTS</a>
+  
+  </div>  
+  </div>
+</div>
+
+<div class="col-3"><div class="card mx-auto" style="width: 18rem; text-align: center;">
+  <img src="{% static 'images/about6.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body" >
+
+    <h5 class="card-title">VIEW PRODUCTS</h5>
+    <p class="card-text">View products that are made with high quality ingredients and vegan certified.</p>
+    <a href="{% url 'seller:view_products' %}" class="btn btn-primary" style="background-color: lightcoral; border-color: lightcoral;">VIEW PRODUCTS</a>
+    </div>
+  </div>
+</div>
+<div class="col-3"></div>
+
+
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

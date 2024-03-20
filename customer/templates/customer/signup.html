@@ -1,0 +1,40 @@
+{% extends 'customer/home.html'%}
+{% block content%}
+<br><br><br>
+
+<div class="container-fluid" style="background-color: rgb(222, 195, 222);" >
+    <div class="row" > 
+    <div class="col-4"></div>
+    <div class="col-4" >
+    <form  method="post" style="text-align: center;">
+     {% csrf_token %}   
+     <br>
+        <h3 style="font-weight: 500; ">Sign Up</h3>
+        <br>
+        <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+    </div><br>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Username</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="name">
+      </div><br>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" >
+    </div><br>
+    <div class="form-group">
+        <label for="exampleInputPassword1"> Confirm Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" >
+      </div>
+    
+  <br><br>
+    <button type="submit" class="btn btn-primary" style=" background-color: lightcoral; border: lightcoral; width:480px;">Sign Up</button><br><br>
+    <h5>Already have an account ?</h5><br>
+    <a href="{% url 'customer:login' %}" style="text-decoration: none;"  ><div style=" background-color: lightcoral; height: 35px; width: 480px; color:#FFFF; border-radius: 5px; ">Login</div></a>
+
+    <br><br><br><br>
+
+
+</form></div></div></div>
+{% endblock %}

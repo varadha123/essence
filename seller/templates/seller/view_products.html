@@ -1,0 +1,49 @@
+{% extends 'seller/seller_home.html' %}
+{% block content %}
+<br><br><br>
+<div class="container-fluid" style="background-color: rgb(222, 195, 222);">
+    
+    <br><br>
+    <div class="row">
+        <div class="col-2"></div>
+       <div class="col-8">
+        <table class="table table-hover">
+            <thead>
+              <tr style="text-align: center; border: 1px solid black; border-collapse: collapse;">
+
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Update</th>
+
+
+
+
+              
+            </tr>
+            </thead>
+            <tbody>
+              {% for product in products %}
+              <tr style="text-align: center;border: 1px solid black;border-collapse: collapse;">
+
+                <td>{{product.product_name}}</td>
+                <td>{{product.price}}</td>
+                <td><img src="/media/{{ product.image }}" alt=""></td>
+                <td>{{product.description}}</td>
+                <td>{{product.category}}</td>
+                <td><a class="btn btn-primary" href="{% url 'seller:update_product' product.id %}">Update</a></td>
+
+                <td><a class="btn btn-danger" href="{% url 'seller:delete_product' product.id %}">Delete</a></td>
+
+              </tr>
+              {% endfor %}
+              
+            </tbody>
+          </table>
+       </div>
+    </div>
+</div>
+{% endblock %}
