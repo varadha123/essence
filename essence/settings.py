@@ -77,23 +77,23 @@ WSGI_APPLICATION = 'essence.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-# '''
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME':'essencedb', 
-#         'USER':'postgres',
-#         'PASSWORD':'12345',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432'
-#     }
-# }
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':os.path.join(BASE_DIR, 'db.sqlite3') 
+        
+    }
+}
 
-# '''
+'''
 import dj_database_url
 DATABASES = {
 
-    'default':dj_database_url.parse('postgres://essencedb_user:EPEcaw6jO1Op0e8CzA1v3XX9Za26NWzz@dpg-cnt8qa021fec73f8trpg-a.oregon-postgres.render.com/essencedb')
+    'default':dj_database_url.parse('postgresql://essencedb_kbwr_user:hzpcRfvBEoIjcxMKgkdpvOfZF7hoolwh@dpg-crg243bqf0us73df9t00-a.oregon-postgres.render.com/essencedb_kbwr',
+        conn_max_age=600,
+        ssl_require=True )
+     
 }
 
 # Password validation
