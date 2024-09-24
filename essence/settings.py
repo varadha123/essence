@@ -90,7 +90,7 @@ DATABASES = {
 import dj_database_url
 DATABASES = {
 
-    'default':dj_database_url.parse('postgresql://essencedb_kbwr_user:hzpcRfvBEoIjcxMKgkdpvOfZF7hoolwh@dpg-crg243bqf0us73df9t00-a.oregon-postgres.render.com/essencedb_kbwr',
+    'default':dj_database_url.parse('postgresql://essencedb_vqjy_user:U5x0lxdIb8sa66POeP9D8RWM1qqIuJQS@dpg-crp8eog8fa8c73dtrtkg-a.oregon-postgres.render.com/essencedb_vqjy',
         conn_max_age=600,
         ssl_require=True )
      
