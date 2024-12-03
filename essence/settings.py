@@ -87,14 +87,26 @@ DATABASES = {
 }
 
 '''
-import dj_database_url
-DATABASES = {
+# import dj_database_url
+# DATABASES = {
 
-    'default':dj_database_url.parse('postgresql://essencedb_vqjy_user:U5x0lxdIb8sa66POeP9D8RWM1qqIuJQS@dpg-crp8eog8fa8c73dtrtkg-a.oregon-postgres.render.com/essencedb_vqjy',
-        conn_max_age=600,
-        ssl_require=True )
+#     'default':dj_database_url.parse('postgresql://essencedb_vqjy_user:U5x0lxdIb8sa66POeP9D8RWM1qqIuJQS@dpg-crp8eog8fa8c73dtrtkg-a.oregon-postgres.render.com/essencedb_vqjy',
+#         conn_max_age=600,
+#         ssl_require=True )
      
+# }
+
+
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.parse(
+        'postgresql://essencedb_x2sm_user:DSBDkCx1Mg5HzDPWYv9afGLUnQWqceOs@dpg-ct78m9i3esus73bo8sj0-a.oregon-postgres.render.com/essencedb_x2sm',
+        conn_max_age=1200,
+        ssl_require=True
+    )
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

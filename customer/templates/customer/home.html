@@ -25,6 +25,7 @@
           <form class="d-flex mt-3" role="search" style=" margin-left: 700px;" action="{% url 'customer:search'%}" method="get">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
             <button class="btn btn-dark" type="submit">Search</button>
+            
           </form>
           
 
@@ -33,6 +34,7 @@
           <a  href="{% url 'customer:login' %}"><img  style="height: 40px; width: 40px;  " src="{% static 'images/user_icon.jpg'%}" alt="" ></a>
           <a href="{% url 'customer:cart' %}"><img  style="height: 40px; width: 40px;" src="{% static 'images/cartimg.jpg'%}" alt=""  ></a>
           <a href="{% url 'customer:logout' %}" class="btn btn-dark" >Logout</a>
+          
 
           
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
